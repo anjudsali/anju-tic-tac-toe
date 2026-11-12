@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top, #25204b, #090914 70%);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    padding: 25px;
+}
+
+.game {
+    width: 100%;
+    max-width: 480px;
+    padding: 35px 25px;
+    text-align: center;
+    background: rgba(22, 20, 48, 0.9);
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    border-radius: 25px;
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.2);
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    color: #c4b5fd;
+    text-shadow: 0 0 15px #8b5cf6;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #aaa5c7;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.scores div {
+    flex: 1;
+    padding: 12px 5px;
+    background: #242044;
+    border: 1px solid #494071;
+    border-radius: 12px;
+    color: #c4b5fd;
+    font-size: 11px;
+}
+
+.scores strong {
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 23px;
+    color: #22d3ee;
+    margin-top: 7px;
+}
+
+#status {
+    color: #67e8f9;
+    font-size: 14px;
+    margin-bottom: 20px;
+    min-height: 25px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;
+    max-width: 330px;
+    margin: 0 auto 25px;
+}
+
+.cell {
+    aspect-ratio: 1;
+    border: 1px solid #6254a0;
+    border-radius: 15px;
+    background: #1c1938;
+    color: #22d3ee;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.cell:hover:not(:disabled) {
+    background: #30265a;
+    border-color: #a78bfa;
+    box-shadow: 0 0 18px rgba(167, 139, 250, 0.5);
+    transform: scale(1.04);
+}
+
+.cell:disabled {
+    cursor: default;
+}
+
+#newGame,
+#reset {
+    padding: 12px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#newGame {
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    color: white;
+}
+
+#reset {
+    background: #292443;
+    border: 1px solid #6b5ca5;
+    color: #c4b5fd;
+}
+
+#newGame:hover,
+#reset:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px rgba(139, 92, 246, 0.5);
+}
+
+footer {
+    margin-top: 30px;
+    color: #8881a8;
+    font-size: 12px;
+}
+
+@media (max-width: 400px) {
+    .game {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .cell {
+        font-size: 32px;
+    }
+}
